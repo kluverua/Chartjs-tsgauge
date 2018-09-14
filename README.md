@@ -1,7 +1,21 @@
+<div align="center">
+    <img src="https://www.chartjs.org/img/chartjs-logo.svg"/>
+</div>
+
+# TSGauge
+
 Extension for Chart.js that allows you to draw "Speedometer" graphs.
 
-Config example:
+### Compatibility
+Requires [Chart.js](https://github.com/chartjs/Chart.js/releases) **2.7.0** or later.
 
+### Install
+```html
+<script src="Gauge.js"></script>
+```
+
+### Config example:
+```js
 {
 	type: "tsgauge",
 	data: {
@@ -31,3 +45,4 @@ Config example:
 		}
 	}
 }
+```
