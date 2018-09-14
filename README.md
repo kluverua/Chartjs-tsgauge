@@ -14,35 +14,24 @@ Requires [Chart.js](https://github.com/chartjs/Chart.js/releases) **2.7.0** or l
 <script src="Gauge.js"></script>
 ```
 
-### Config example:
+### Example:
 ```js
-{
+var ctx = document.getElementById("canvas").getContext("2d");
+new Chart(ctx, {
 	type: "tsgauge",
 	data: {
 		datasets: [{
 			backgroundColor: ["#0fdc63", "#fd9704", "#ff7143"],
 			borderWidth: 0,
 			gaugeData: {
-				value: 7584,
+				value: 7777,
 				valueColor: "#ff7143"
 			},
-			gaugeLimits: [1000, 3000, 5000, 8000]
+			gaugeLimits: [0, 3000, 7000, 10000]
 		}]
 	},
 	options: {
-		events: [],
-		layout: {
-			padding: {
-				top: 10
-			}
-		},
-		legend: {
-			display: false
-		},
-		scales: {},
-		tooltips: {
-			enabled: false
-		}
+		events: []
 	}
-}
+});
 ```
