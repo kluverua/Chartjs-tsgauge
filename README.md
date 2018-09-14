@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="logo.bpm"/>
+    <img src="https://github.com/kluverua/Chartjs-tsgauge/blob/master/logo.bmp"/>
 </div>
 
 # TSGauge
