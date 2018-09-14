@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="https://github.com/kluverua/Chartjs-tsgauge/blob/master/logo.bmp"/>
+    <img src="logo.bmp"/>
 </div>
 
 # TSGauge
