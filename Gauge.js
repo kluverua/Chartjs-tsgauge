@@ -14,7 +14,7 @@
 		this.fontColor = chart.options.defaultFontColor;
 		this.ctx.textBaseline = "alphabetic";
 		this.arrowAngle = 25 * Math.PI / 180;
-		this.arrowColor = "#444";
+		this.arrowColor = config.options.indicatorColor || "#444";
 	};
 	GaugeChartHelper.prototype.applyGaugeConfig = function (chartConfig) {
 		this.calcLimits();
