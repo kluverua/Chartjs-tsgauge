@@ -116,15 +116,18 @@
 	};
 	GaugeChartHelper.prototype.renderValueArrow = function(value) {
 		var angle = this.getAngleOfValue(typeof value === "number" ? value : this.data.value);
+		this.ctx.globalCompositeOperation="source-over";
 		this.renderArrow(this.gaugeRadius, angle, this.arrowLength, this.arrowAngle, this.arrowColor);
 	};
 	GaugeChartHelper.prototype.renderSmallValueArrow = function(value) {
 		var angle = this.getAngleOfValue(value);
+		this.ctx.globalCompositeOperation="source-over";
 		this.renderArrow(this.gaugeRadius - 1, angle, this.arrowLength - 1, this.arrowAngle, this.arrowColor);
 	};
 	GaugeChartHelper.prototype.clearValueArrow = function(value) {
 		var angle = this.getAngleOfValue(value);
 		this.ctx.lineWidth = 1;
+		this.ctx.globalCompositeOperation="destination-out";
 		this.renderArrow(this.gaugeRadius - 1, angle, this.arrowLength + 1, this.arrowAngle, "#FFFFFF");
 		this.ctx.stroke();
 	};
