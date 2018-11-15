@@ -32,7 +32,8 @@ new Chart(ctx, {
 	},
 	options: {
 		events: [],
-        indicatorColor: '#000'
+        arrowColor: '#000',
+        showMarkers: true
 	}
 });
 ```
