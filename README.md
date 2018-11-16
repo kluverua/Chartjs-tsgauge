@@ -32,7 +32,7 @@ new Chart(ctx, {
 	},
 	options: {
             events: [],
-            arrowColor: '#000',
+            arrowColor: "#000",
             showMarkers: true
 	}
 });
