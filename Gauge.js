@@ -14,7 +14,8 @@
 		this.fontColor = chart.options.defaultFontColor;
 		this.ctx.textBaseline = "alphabetic";
 		this.arrowAngle = 25 * Math.PI / 180;
-		this.arrowColor = "#444";
+		this.arrowColor = config.options.indicatorColor || "#444";
+		this.showMarkers = typeof(config.options.showMarkers) === 'undefined' ? true : config.options.showMarkers;
 	};
 	GaugeChartHelper.prototype.applyGaugeConfig = function (chartConfig) {
 		this.calcLimits();
@@ -194,7 +195,9 @@
 			var gaugeHelper = this.gaugeHelper;
 			gaugeHelper.updateGaugeDimensions();
 			gaugeHelper.renderValueLabel();
-			gaugeHelper.renderLimits();
+			if(gaugeHelper.showMarkers) {
+			    gaugeHelper.renderLimits();
+			}
 			gaugeHelper.renderSmallValueArrow(gaugeHelper.minValue);
 		}
 	});

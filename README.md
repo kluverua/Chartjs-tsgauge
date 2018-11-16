@@ -31,7 +31,9 @@ new Chart(ctx, {
 		}]
 	},
 	options: {
-		events: []
+            events: [],
+            arrowColor: '#000',
+            showMarkers: true
 	}
 });
 ```
