@@ -36,3 +36,6 @@ new Chart(ctx, {
 	}
 });
 ```
+## License
+
+TSGauge is available under the [MIT license](https://opensource.org/licenses/MIT).
