@@ -1,0 +1,19 @@
+{
+  "name": "chartjs-tsgauge",
+  "version": "1.0.0",
+  "description": "<div align=\"center\">\r     <img src=\"logo.bmp\"/>\r </div>",
+  "main": "Gauge.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kluverua/Chartjs-tsgauge.git"
+  },
+  "author": "",
+  "license": "MIT license",
+  "bugs": {
+    "url": "https://github.com/kluverua/Chartjs-tsgauge/issues"
+  },
+  "homepage": "https://github.com/kluverua/Chartjs-tsgauge#readme"
+}
