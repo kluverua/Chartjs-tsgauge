@@ -14,6 +14,7 @@
 		this.fontStyle = options.defaultFontFamily;
 		this.fontColor = options.defaultFontColor;
 		this.ctx.textBaseline = "alphabetic";
+		this.scaleFactor = (200 - this.chart.config.options.cutoutPercentage) / this.chart.config.options.cutoutPercentage;
 		this.arrowAngle = 25 * Math.PI / 180;
 		this.arrowColor = config.options.indicatorColor || options.arrowColor;
 		this.showMarkers = typeof(config.options.showMarkers) === 'undefined' ? true : config.options.showMarkers;
@@ -63,7 +64,7 @@
 		this.gaugeRadius = this.chart.innerRadius;
 		this.gaugeCenterX = (chartArea.left + chartArea.right) / 2;
 		this.gaugeCenterY = (chartArea.top + chartArea.bottom + this.chart.outerRadius) / 2;
-		this.arrowLength = this.chart.radiusLength * 2;
+		this.arrowLength = this.chart.radiusLength * 2 / this.scaleFactor;
 	};
 	GaugeChartHelper.prototype.getCoordOnCircle = function(r, alpha) {
 		return {
@@ -101,7 +102,7 @@
 			align = "center";
 		}
 		ctx.textAlign = align;
-		ctx.font = this.fontSize + "px " + this.fontStyle;
+		ctx.font = (this.fontSize / this.scaleFactor) + "px " + this.fontStyle;
 		ctx.fillStyle = this.fontColor;
 		var text = this.markerFormatFn(value);
 		ctx.fillText(text, this.gaugeCenterX - coord.x, this.gaugeCenterY - coord.y);
@@ -119,9 +120,9 @@
 		var elementWidth = 0.75 * this.gaugeRadius * 2;
 		var widthRatio = elementWidth / stringWidth;
 		var newFontSize = Math.floor(30 * widthRatio);
-		var fontSizeToUse = Math.min(newFontSize, this.gaugeRadius);
 		ctx.textAlign = "center";
 		ctx.font = fontSizeToUse + "px " + this.fontStyle;
+		var fontSizeToUse = Math.min(newFontSize, this.gaugeRadius) / this.scaleFactor;
 		ctx.fillStyle = this.data.valueColor || this.fontColor;
 		ctx.fillText(label, this.gaugeCenterX, this.gaugeCenterY);
 	};
