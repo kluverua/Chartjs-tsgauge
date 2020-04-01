@@ -8,7 +8,14 @@
 		this.chart = chart;
 		this.ctx = chart.ctx;
 		this.limits = config.data.datasets[0].gaugeLimits;
-		this.data = config.data.datasets[0].gaugeData;
+        this.data = config.data.datasets[0].gaugeData;
+        if (config.options.formatDataValue) {
+			this.formatDataValue = config.options.formatDataValue;
+		} else {
+			this.formatDataValue = function(value) {
+				return value;
+			}
+		}
 		var options = chart.options;
 		this.fontSize = options.defaultFontSize;
 		this.fontStyle = options.defaultFontFamily;
@@ -112,7 +119,7 @@
 		}
 	};
 	GaugeChartHelper.prototype.renderValueLabel = function() {
-		var label = this.data.value.toString();
+		var label = this.formatDataValue(this.data.value).toString();
 		var ctx = this.ctx;
 		ctx.font = "30px " + this.fontStyle;
 		var stringWidth = ctx.measureText(label).width;
