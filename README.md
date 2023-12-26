@@ -7,7 +7,7 @@
 Extension for Chart.js that allows you to draw "Speedometer" graphs.
 
 ### Compatibility
-Requires [Chart.js](https://github.com/chartjs/Chart.js/releases) **2.7.0** or later.
+Requires [Chart.js](https://github.com/chartjs/Chart.js/releases) version between **2.7.0** and **2.9.4**
 
 ### Install
 ```html
